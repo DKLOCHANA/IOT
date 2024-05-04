@@ -1,0 +1,113 @@
+import 'package:flutter/material.dart';
+
+import 'widgets/ButtonWidget.dart';
+
+void main() => runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Home()));
+
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Elephant Pulse'),
+        titleTextStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+        ),
+        centerTitle: true,
+        backgroundColor: Color.fromRGBO(13, 146, 118, 5),
+      ),
+      body: Column(
+        children: [
+          Image.asset(
+            'assets/The_Common_Wanderer_-9889.jpg',
+            width: 600,
+            height: 200,
+            fit: BoxFit.cover,
+          ),
+          Text('Elephant Pulse'),
+          Expanded(
+        child: GridView.count(
+          crossAxisCount: 2,
+          children: const[
+            ButtonWidget(title: 'New Trip', icon: Icons.home),
+            ButtonWidget(title: 'News Feed', icon: Icons.access_alarm),
+            ButtonWidget(title: 'Device Stats', icon: Icons.access_time),
+            ButtonWidget(title: 'Settings', icon: Icons.accessible_forward),
+            ButtonWidget(title: 'Report', icon: Icons.account_balance),
+            ButtonWidget(title: 'Button 6', icon: Icons.account_balance_wallet),
+            
+          ],
+        ),
+      ),
+        ],
+      ),
+      // GridView should be wrapped in an Expanded widget
+    
+    );
+  }
+}
+
+
+
+child: GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                crossAxisSpacing: 40,
+                mainAxisSpacing: 30,
+                children: [
+                  itemDashboard('Videos', CupertinoIcons.play_rectangle, Colors.deepOrange),
+                  itemDashboard('Analytics', CupertinoIcons.graph_circle, Colors.green),
+                  itemDashboard('Audience', CupertinoIcons.person_2, Colors.purple),
+                  itemDashboard('Comments', CupertinoIcons.chat_bubble_2, Colors.brown),
+                  itemDashboard('Revenue', CupertinoIcons.money_dollar_circle, Colors.indigo),
+                  itemDashboard('Upload', CupertinoIcons.add_circled, Colors.teal),
+                  itemDashboard('About', CupertinoIcons.question_circle, Colors.blue),
+                  itemDashboard('Contact', CupertinoIcons.phone, Colors.pinkAccent),
+                ],
+              ),
+
+
+
+
+itemDashboard(String title, IconData iconData, Color background) => Container(
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(10),
+      boxShadow: [
+        BoxShadow(
+          offset: const Offset(0, 5),
+          color: Theme.of(context).primaryColor.withOpacity(.2),
+          spreadRadius: 2,
+          blurRadius: 5
+        )
+      ]
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: background,
+            shape: BoxShape.circle,
+          ),
+          child: Icon(iconData, color: Colors.white)
+        ),
+        const SizedBox(height: 8),
+        Text(title.toUpperCase(), style: Theme.of(context).textTheme.titleMedium)
+      ],
+    ),
+  );
+
+itemDashboard('Contact', Icons.phone, Colors.pinkAccent, () {
+   
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ContactUsPage()),
+          );
+        }),

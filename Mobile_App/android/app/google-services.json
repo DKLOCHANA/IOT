@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "367885456902",
+    "firebase_url": "https://test2-f16fb-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "test2-f16fb",
+    "storage_bucket": "test2-f16fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367885456902:android:d84018cbfd2bca67931587",
+        "android_client_info": {
+          "package_name": "com.example.medicaid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKn-lZal4W9vliCud-MrprI2buTFvP-RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367885456902:android:169bde855e1079d7931587",
+        "android_client_info": {
+          "package_name": "com.example.track_elephants"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKn-lZal4W9vliCud-MrprI2buTFvP-RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
